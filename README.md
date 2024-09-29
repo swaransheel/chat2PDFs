@@ -12,7 +12,7 @@ The **Smart PDF Assistant** is a conversational AI tool built with Streamlit tha
 - **Vector Store**: Utilizes FAISS for efficient similarity search and context retrieval.
 - **Google Generative AI**: Integrates with Google’s generative AI for answering questions.
 
-![alt text]([http://url/to/img.png](https://github.com/alejandro-ao/ask-multiple-pdfs/blob/main/docs/PDF-LangChain.jpg))
+![alt text](https://raw.githubusercontent.com/alejandro-ao/ask-multiple-pdfs/refs/heads/main/docs/PDF-LangChain.jpg)
 ## Technologies Used
 
 - [Streamlit](https://streamlit.io/) - Framework for building web apps.
