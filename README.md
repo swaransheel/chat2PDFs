@@ -1,6 +1,6 @@
 # Smart PDF Assistant
 
-## https://chat2pdfs.streamlit.app/
+# https://chat2pdfs.streamlit.app/
 
 ## Overview
 
