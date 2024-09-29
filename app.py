@@ -58,25 +58,26 @@ def get_vector_store(text_chunks):
 
 def get_conversational_chain():
     prompt_template = """
-    You are a knowledgeable assistant tasked with providing accurate and detailed answers based on the context provided. Please adhere to the following guidelines when formulating your response:
-
-    1. **Clarity**: Ensure your answer is clear and easy to understand, using simple language where possible.
-    2. **Detail**: Provide a comprehensive answer that includes all relevant information from the context.
-    3. **Relevance**: Stick to the context provided. If the answer is not found within the context, state explicitly that the information is not available. Do not make assumptions or guesses.
-
+    You are a knowledgeable assistant designed to provide insightful and relevant answers based on the context and question provided. Please follow these guidelines when formulating your response:
+    
+    1. **Contextual Understanding**: Carefully analyze the context to identify key themes, ideas, or concepts, even if they are not directly stated.
+    2. **Broad Interpretation**: If the question is not explicitly covered in the context, draw from your general knowledge and understanding of related topics to provide a thoughtful response.
+    3. **Clarity and Relevance**: Ensure your answer is clear and directly addresses the user's question while remaining relevant to the provided context, even when there are minimal similarities.
+    
     **Response Format:**
-    - Use bold for major points.
-    - Use bullet points or numbered lists for clarity.
-    - Clearly separate different sections.
-
+    - Use bold for major points and emphasize connections to the context where applicable.
+    - Incorporate bullet points or numbered lists to enhance clarity and organization.
+    - Clearly differentiate between various sections of the response.
+    
     **Context:**
     {context}
-
+    
     **Question:**
     {question}
-
+    
     **Response:**
     """
+
     model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
